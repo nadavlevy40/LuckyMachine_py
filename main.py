@@ -132,7 +132,7 @@ def spin(balance):
         if(totalBet>balance):
             print(f"You do not have enough to bet that amount , your balance is: ${balance}")
         else:
-            break    
+            break     
     print(f"You are betting ${bet} on {lines} lines . Total bet is equal to: ${totalBet}")
     print(balance,lines)
     slots=get_slot_machine_spin(ROWS, COLS, symbol_count) 
@@ -148,6 +148,8 @@ def spin(balance):
 def main():
     balance=deposit()
     while True:
+        if balance==0:
+            break
         print(f"Current balance is ${balance}")
         play=input("Press enter to play (q to exit) ")
         if play=="q":
