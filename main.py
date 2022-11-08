@@ -42,7 +42,12 @@ def check_winnings(columns, lines ,bet , values):
 
 
 
-
+"""This function returns the results of the current spin.
+    Init a symbols list using the sybols dictionary. 
+    Create a copy of the symbols list into the columns list of column lists.
+    Init each column list ,then loop over the rows , and randomize a value
+    to inserted to current column list.
+    """
 def get_slot_machine_spin(rows,cols,symbols):
     all_symbols=[]
     for symbol , symbol_count in symbols.items():
@@ -144,12 +149,13 @@ def spin(balance):
 
 
 
+#Main function. The user is able to play the machine as long as the balance is not zero
 
 def main():
     balance=deposit()
     while True:
         if balance==0:
-            break
+            break 
         print(f"Current balance is ${balance}")
         play=input("Press enter to play (q to exit) ")
         if play=="q":
